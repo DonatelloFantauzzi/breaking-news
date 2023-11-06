@@ -1,0 +1,33 @@
+{% for article in cronaca %}
+
+<section class="">
+  <div class=" ">
+    <h2 class=" ">{{ section.sectionTitle }}</h2>
+    <div class="">
+      <article class="">
+        <div class="">
+          <picture>
+            <source
+              srcset="{{article.srcset}}"
+              srcset="https://unsplash.it/600/338?random"
+              media="(min-width:768px)"
+            />
+            <img
+              class="img"
+              src="{{ article.img }}"
+              src="https://unsplash.it/450/600?random"
+              loading="lazy"
+              alt=""
+            />
+          </picture>
+        </div>
+        <div class="">
+          <span class="">{{ article.badge }}</span>
+          <h1 class="">{{ article.articleTitle }}</h1>
+          <p class="">{{ article.content }}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+{% endfor %}
