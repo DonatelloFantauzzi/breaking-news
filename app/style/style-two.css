@@ -127,6 +127,9 @@ body[data-theme=purple] {
   font-size: var(--base);
   font-style: italic;
   padding: var(--large);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .section {
