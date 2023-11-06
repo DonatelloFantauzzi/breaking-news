@@ -7,12 +7,22 @@
     <title>Nesw Page</title>
   </head>
   <body data-theme="blue">
-    {% include "partials/header.njk" %}
+    {% include "./partials/header.njk" %}
     <main class="main">
       {% block cronaca %}
-        
+
       {% endblock %}
+
+      {% block politica %}
+
+      {% endblock %}
+
+      {% block sport %}
+
+      {% endblock %}
+
+     
     </main>
-    {% include "partials/footer.njk" %}
+    {% include "./partials/footer.njk" %}
   </body>
 </html>
