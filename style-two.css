@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Julius+Sans+One&display=swap");
+:root {
+  /* Margin/Padding/Font Size */
+  --xl: 3.2rem;
+  --large: 2rem;
+  --interbase: 1.8rem;
+  --base-l: 1.2rem;
+  --base: 1rem;
+  --medium: 0.7rem;
+  --small: 0.5rem;
+  /* Font family */
+  --sefir: Georgia;
+  --sans: Arial;
+  --julius: "Julius Sans One", sans-serif;
+  --anton: "Anton", sans-serif;
+  /* Colori */
+  --purple: 128, 0, 128;
+  --gray: 85, 85, 85;
+  --blue: 0, 0, 255;
+  --white: white;
+  --secondary: orangered;
+}
+
+html *,
+body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--sans);
+}
+body[data-theme=blue] {
+  --color-primary: rgb(var(--gray));
+  --color-light: rgba(var(--gray), 0.5);
+}
+body[data-theme=purple] {
+  --color-primary: rgb(var(--purple));
+  --color-light: rgba(var(--purple), 0.15);
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.header,
+.footer {
+  background-color: var(--color-primary);
+  color: var(--white);
+  text-align: center;
+  padding: var(--base);
+}
+
+.header {
+  font-size: var(--large);
+  font-family: var(--anton);
+  font-size: var(--xl);
+}
+
+.serif {
+  font-style: var(--sefir);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.gap {
+  --gap: var(--base);
+  gap: var(--gap);
+}
+.gap--small {
+  --gap: var(--small);
+}
+.gap--large {
+  --gap: var(--large);
+}
+
+.padding-t {
+  --padding-t: var(--base);
+  padding-top: var(--padding-t);
+}
+.padding-t--small {
+  --padding: var(--small);
+}
+.padding-t--large {
+  --padding: var(--large);
+}
+
+.margin-b {
+  --margin-b: var(--base);
+  margin-bottom: var(--margin-b);
+}
+.margin-b--small {
+  --margin: var(--small);
+}
+.margin-b--large {
+  --margin: var(--large);
+}
+
+.text-color-secondary {
+  color: var(--secondary);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.section {
+  padding: var(--base) var(--small);
+}
+.section:nth-child(odd) {
+  background-color: var(--color-light);
+}
+.section--title {
+  --color: var(--color-primary);
+  --border: 3px solid var(--color-primary);
+  color: var(--color);
+  border-bottom: var(--border);
+  font-size: var(--large);
+  font-family: var(--julius);
+}
+.section:nth-child(even) .section--title {
+  --color: var(--secondary);
+  --border: 3px solid var(--secondary);
+}
+.section:nth-child(odd) .section--title {
+  --color: var(--white);
+  --border: 3px solid var(--white);
+}
+
+@media screen and (min-width: 768px) {
+  .articles-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "a a" "b c";
+  }
+}
+
+.article {
+  position: relative;
+  padding: var(--base) 0;
+}
+.article:not(:last-child):after {
+  --background: var(--secondary);
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 2px;
+  background-color: var(--background);
+  width: 60%;
+  transform: translateX(-50%);
+}
+.section:nth-child(odd) .article:not(:last-child):after {
+  background-color: var(--white);
+}
+@media screen and (min-width: 768px) {
+  .article {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 1fr;
+    padding: var(--base);
+  }
+  .article:first-child {
+    grid-area: a;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+    align-items: center;
+  }
+  .article:first-child::after {
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--secondary);
+    transform: translateX(0);
+  }
+  .article:nth-child(even)::after {
+    left: 100%;
+    height: 100%;
+    width: 1px;
+    background-color: var(--secondary);
+  }
+}
+.article--information {
+  align-self: flex-start;
+  font-size: var(--base);
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+.article--heading {
+  font-size: var(--large);
+  letter-spacing: 0.1px;
+  line-height: 1;
+  font-family: var(--sefir);
+}
+.section:nth-child(odd) .article--heading {
+  color: var(--white);
+}
+@media screen and (min-width: 768px) {
+  .article:first-child .article--heading {
+    font-size: var(--xl);
+  }
+}
+.article--paragraph {
+  line-height: 1.3;
+  letter-spacing: 1px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  font-size: 1.2rem;
+}
+.section:nth-child(odd) .article--paragraph {
+  color: var(--white);
+}
+@media screen and (min-width: 768px) {
+  .article:not(:first-child) .article--paragraph {
+    display: none;
+  }
+}
+.article--author {
+  font-size: var(--medium);
+  font-style: italic;
+  margin-top: calc(-1 * var(--small));
+}
+.section:nth-child(odd) .article--author {
+  color: var(--white);
+}/*# sourceMappingURL=style-two.css.map */
