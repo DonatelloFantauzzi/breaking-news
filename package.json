@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DonatelloFantauzzi/breaking-news/issues"
   },
-  "homepage": "https://github.com/DonatelloFantauzzi/breaking-news#readme"
+  "homepage": "https://github.com/DonatelloFantauzzi/breaking-news#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
