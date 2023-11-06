@@ -128,25 +128,6 @@ body {
   font-family: map-get($fontStyle, sans);
   position: relative;
 
-  &__modal {
-    display: none;
-    width: 100vw;
-    // height: 70vh;
-    background: var(--color-primary);
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    top: 100%;
-
-    &__links {
-      height: 100%;
-      background-color: var(--color-primary);
-      display: flex;
-      justify-content: space-between;
-      padding-top: var(--base);
-    }
-  }
-
   &__title {
     font-size: var(--xxl);
     font-family: var(--bebas);
@@ -159,14 +140,18 @@ body {
     display: flex;
     gap: 1rem;
     font-size: 1.2rem;
-    // &:hover + .header__modal {
-    //   display: block;
-    // }
   }
-}
 
-#modal:checked ~ .header__modal {
-  display: block;
+  &__link a {
+    text-decoration: none;
+    color: black;
+    padding-bottom: var(--base);
+    transition: all 0.3s linear;
+
+    &:hover {
+      box-shadow: inset 0 -4px var(--accent);
+    }
+  }
 }
 
 .notizie {
