@@ -135,7 +135,7 @@ body[data-theme=purple] {
 .footer {
   background-color: var(--color-primary);
   text-align: center;
-  font-size: 1rem;
+  font-size: var(--base);
   font-style: italic;
   padding: var(--large);
 }
